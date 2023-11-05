@@ -61,3 +61,39 @@ public:
         
     }
 };
+
+
+
+// from array
+Node* createTree(vector<int>&arr){
+    
+    
+    int i=0;
+    queue<Node *>q;
+    
+
+    Node *root=new Node(arr[0]);
+    q.push(root);
+    
+
+    while(!q.empty() and i<arr.size()/2){
+        Node *cur=q.front();
+        q.pop();
+        int l=arr[2*i+1],r=arr[2*i+2];
+        if(l!=-1){
+            Node *left=new Node(l);
+            cur->left=left;
+            q.push(left);
+        }else cur->left=NULL;
+
+        if(r!=-1){
+            Node *right=new Node(r);
+            cur->right=right;
+            q.push(right);
+        }else cur->right=NULL;
+        i++;
+    }
+
+    return root;
+
+}
