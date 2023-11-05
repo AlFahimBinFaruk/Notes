@@ -1,3 +1,4 @@
+* left->root->right.
 ### with recursion
 ```cpp
 void dfs(TreeNode* root,vector<int>&arr){
