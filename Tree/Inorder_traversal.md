@@ -1,5 +1,5 @@
 ### with recursion
-``cpp
+```cpp
 void dfs(TreeNode* root,vector<int>&arr){
       if(root==NULL)return;
       dfs(root->left,arr);
