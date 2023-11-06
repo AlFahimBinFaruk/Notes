@@ -1,4 +1,5 @@
 * root->left->right
+* T O(N) S O(N)
 ```cpp
 void sol(TreeNode<int>* root,vector<int>&arr){
     if(root==NULL)return;
