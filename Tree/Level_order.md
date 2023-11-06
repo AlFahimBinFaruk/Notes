@@ -16,4 +16,5 @@ void sol(TreeNode<int>* root,vector<int>&arr){
             q.push(root->right);
         }
     }
-}```
+}
+```
