@@ -1,0 +1,1 @@
+* [Magic/Dunder methods in python](https://www.geeksforgeeks.org/dunder-magic-methods-python/)
