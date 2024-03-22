@@ -3,3 +3,15 @@
 3. The act of wiring beans together is based on a pattern known as dependency injection(DI).
 4. Spring Boot starter dependencies (normal and stater two diffrent types) are special in that they typically don’t have any library code themselves but instead transitively pull in other libraries.
 5. Servlets are used in Spring-MVC. In Spring-MVC when you write annotation like @Controller, indirectly you are using a Servlet called Dispatcher Servlet.
+6. To generate target dir in Spring-boot
+```java
+mnv clean install
+```
+7. Important commands
+```java
+mvn compile
+mvn test
+mvn package
+
+java -jar target/project.jar
+```
