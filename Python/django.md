@@ -22,7 +22,7 @@ venv myenv
 
 3. Activate env
 ```cmd
-myvenv/bin/activate
+source myvenv/bin/activate
 ```
 
 4. Install Django
