@@ -28,3 +28,34 @@ void sol(TreeNode* root,vector<int>&arr){
     
 }
 ```
+### Moris inorder traversal
+```cpp
+while (root){
+
+    if (root->left){
+        TreeNode *temp = root->left;
+        while (true){
+            if (temp->right and temp->right == root){
+                cout<<root->val<<" ";
+                root = root->right;
+                temp->right = NULL;
+                break;
+            }
+            else if (temp->right){
+                temp = temp->right;
+            }
+            else{
+                TreeNode *temp2 = root;
+                root = root->left;
+                temp->right = temp2;
+                break;
+            }
+        }
+    }
+    else{
+
+        cout<<root->val<<" ";
+        root = root->right;
+    }
+}
+```
