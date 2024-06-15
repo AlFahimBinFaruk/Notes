@@ -10,108 +10,108 @@ left child can be greater than right child don't OC it.
 
 class MinHeap{
     private:
-    vector<int>heap;
-
-    // to make the valid structure.
-    void heapify(int i){
-
-        int smallest=i;
-        int left=(2*i)+1;
-        int right=(2*i)+2;
-        
-
-        int n=heap.size();
-
-        if(left<n and heap[left]<heap[smallest]){
-            smallest=left;
+        vector<int>heap;
+    
+        // to make the valid structure.
+        void heapify(int i){
+    
+            int smallest=i;
+            int left=(2*i)+1;
+            int right=(2*i)+2;
+            
+    
+            int n=heap.size();
+    
+            if(left<n and heap[left]<heap[smallest]){
+                smallest=left;
+            }
+    
+            if(right<n and heap[right]<heap[smallest]){
+                smallest=right;
+            }
+    
+            if(smallest!=i){
+                swap(heap[i],heap[smallest]);
+                heapify(smallest);
+            }
+            
         }
-
-        if(right<n and heap[right]<heap[smallest]){
-            smallest=right;
+    
+        // return the parent index of i
+        int parent(int i){
+            return (i-1)/2;
         }
-
-        if(smallest!=i){
-            swap(heap[i],heap[smallest]);
-            heapify(smallest);
-        }
-        
-    }
-
-    // return the parent index of i
-    int parent(int i){
-        return (i-1)/2;
-    }
 
     public:
 
 
-    // constructor
-    MinHeap(){}
-
-    void insert(int key){
-
-        heap.push_back(key);
-
-        int i=heap.size()-1;
-
-        while(i>=0 and heap[i]<heap[parent(i)]){
-            swap(heap[i],heap[parent(i)]);
-            i=parent(i);
+        // constructor
+        MinHeap(){}
+    
+        void insert(int key){
+    
+            heap.push_back(key);
+    
+            int i=heap.size()-1;
+    
+            while(i>=0 and heap[i]<heap[parent(i)]){
+                swap(heap[i],heap[parent(i)]);
+                i=parent(i);
+            }
         }
-    }
-
-
-    int extractMin(){
-
-        if(heap.empty()){
-            throw runtime_error("Heap is empty");
+    
+    
+        int extractMin(){
+    
+            if(heap.empty()){
+                throw runtime_error("Heap is empty");
+            }
+    
+            int mn=heap[0];
+    
+            heap[0]=heap.back();
+            heap.pop_back();
+    
+            heapify(0);
+    
+            return mn;
         }
-
-        int mn=heap[0];
-
-        heap[0]=heap.back();
-        heap.pop_back();
-
-        heapify(0);
-
-        return mn;
-    }
-
-
-    int getMin(){
-        if(heap.empty()){
-            throw runtime_error("Heap is empty");
+    
+    
+        int getMin(){
+            if(heap.empty()){
+                throw runtime_error("Heap is empty");
+            }
+    
+            return heap[0];
         }
-
-        return heap[0];
-    }
-
-    void decreaseKey(int i,int new_val){
-        if(i>=heap.size()){
-            throw runtime_error("Index don't exits.");
+    
+        void decreaseKey(int i,int new_val){
+            if(i>=heap.size()){
+                throw runtime_error("Index don't exits.");
+            }
+    
+            heap[i]=new_val;
+            
+            while(i>=0 and heap[i]<heap[parent(i)]){
+                swap(heap[i],heap[parent(i)]);
+                i=parent(i);
+            }
         }
-
-        heap[i]=new_val;
-        
-        while(i>=0 and heap[i]<heap[parent(i)]){
-            swap(heap[i],heap[parent(i)]);
-            i=parent(i);
+    
+    
+        void deleteKey(int i){
+            if(i>=heap.size()){
+                throw runtime_error("Index don't exits.");
+            }
+    
+            decreaseKey(i,INT_MIN);
+            extractMin();
         }
-    }
-
-
-    void deleteKey(int i){
-        if(i>=heap.size()){
-            throw runtime_error("Index don't exits.");
+    
+        bool isEmpty(){
+            return heap.empty();
         }
-
-        decreaseKey(i,INT_MIN);
-        extractMin();
-    }
-
-    bool isEmpty(){
-        return heap.empty();
-    }
 
 };
 
