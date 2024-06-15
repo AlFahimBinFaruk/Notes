@@ -13,6 +13,8 @@ class MinHeap{
         vector<int>heap;
     
         // to make the valid structure.
+
+        // O(logN)
         void heapify(int i){
     
             int smallest=i;
@@ -47,7 +49,8 @@ class MinHeap{
 
         // constructor
         MinHeap(){}
-    
+
+        // O(logN)
         void insert(int key){
     
             heap.push_back(key);
@@ -60,7 +63,7 @@ class MinHeap{
             }
         }
     
-    
+        // O(logN)
         int extractMin(){
     
             if(heap.empty()){
@@ -85,7 +88,8 @@ class MinHeap{
     
             return heap[0];
         }
-    
+
+        // O(logN)
         void decreaseKey(int i,int new_val){
             if(i>=heap.size()){
                 throw runtime_error("Index don't exits.");
@@ -99,7 +103,8 @@ class MinHeap{
             }
         }
     
-    
+
+        // O(logN)
         void deleteKey(int i){
             if(i>=heap.size()){
                 throw runtime_error("Index don't exits.");
