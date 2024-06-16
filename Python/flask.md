@@ -11,3 +11,8 @@ python3 -m venv .venv
 ```cmd
 mongodb+srv://username:password@cluster1.fa2ety3.mongodb.net/database_name?retryWrites=true&w=majority
 ```
+4. Requirement.txt
+```cmd
+pip freeze > requirements.txt
+pip install -r requirements.txt
+```
