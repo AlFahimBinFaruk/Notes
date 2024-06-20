@@ -1,4 +1,5 @@
 * left->root->right.
+* Inorder traversal always gives you an sorted array.
 ### with recursion
 ```cpp
 void dfs(TreeNode* root,vector<int>&arr){
