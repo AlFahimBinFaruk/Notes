@@ -6,8 +6,8 @@ lets say you are now in y branch and want to update it with the changes in x bra
 it will pull the changes from x branch and only update it in current branch you are working right now.
 ```
 * while working in group project
-```
-when you have made some changes in you branch push them in your remote branch
+```bash
+# when you have made some changes in you branch push them in your remote branch
 git add .
 git commit -m""
 git push origin developer/al-fahim
