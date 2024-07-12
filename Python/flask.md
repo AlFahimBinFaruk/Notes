@@ -16,3 +16,7 @@ mongodb+srv://username:password@cluster1.fa2ety3.mongodb.net/database_name?retry
 pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
+5. Running
+```cmd
+flask --app flaskr run --debug
+```
