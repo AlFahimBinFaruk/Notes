@@ -11,6 +11,7 @@ sudo mv composer.phar /usr/local/bin/composer
 ```
 composer create-project --prefer-dist laravel/laravel my-laravel-app
 cd my-laravel-app
+php artisan migrate
 php artisan serve
 
 ```
