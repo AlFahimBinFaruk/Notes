@@ -38,6 +38,10 @@ sudo chmod -R 775 /opt/lampp/htdocs/my-laravel-app/bootstrap/cache
 7. configure virtual host
 ```
 sudo nano /opt/lampp/etc/httpd.conf
+# Virtual hosts
+Include etc/extra/httpd-vhosts.conf
+
+sudo nano /opt/lampp/etc/extra/httpd-vhosts.conf
 - at the end of this file add
 <VirtualHost *:80>
     DocumentRoot "/opt/lampp/htdocs/my-laravel-app/public"
