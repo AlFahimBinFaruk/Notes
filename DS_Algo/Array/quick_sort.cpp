@@ -1,3 +1,7 @@
+/*
+Time : O(N*logN)
+Space: O(1)+O(N) recursion stack complexity.
+*/
 int partition(vector<int>&arr,int low,int high){
     int pivot=arr[low];
     int i=low,j=high;
