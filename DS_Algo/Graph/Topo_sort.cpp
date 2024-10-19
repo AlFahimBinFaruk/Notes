@@ -1,6 +1,6 @@
 // Kahn's Algo.
 class Solution {
-  public:
+public:
     // Function to return list containing vertices in Topological order.
     vector<int> topologicalSort(vector<vector<int>>& adj) {
         // Your code here
@@ -60,18 +60,18 @@ public:
         ans.push_back(cur);
     }
 
-	vector<int> topoSort(int V, vector<int> adj[]){
+     vector<int> topoSort(int V, vector<int> adj[]){
 
-        vis.clear();
-        ans.clear();
+         vis.clear();
+         ans.clear();
 
-        for(int i=0;i<V;i++){
-            if(vis.find(i)==vis.end()){
-                dfs(i,adj);
-            }
-        }
+         for(int i=0;i<V;i++){
+             if(vis.find(i)==vis.end()){
+                 dfs(i,adj);
+             }
+         }
 
-        reverse(ans.begin(),ans.end());
-        return ans;
-	}
+         reverse(ans.begin(),ans.end());
+         return ans;
+     }
 }
