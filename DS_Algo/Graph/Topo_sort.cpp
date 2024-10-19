@@ -45,7 +45,7 @@ class Solution {
 
 // DFS.
 class Solution{
-	public:
+public:
     set<int>vis;
     vector<int>ans;
 
