@@ -1,4 +1,4 @@
-# Kahn's Algo.
+// Kahn's Algo.
 class Solution {
   public:
     // Function to return list containing vertices in Topological order.
@@ -43,7 +43,7 @@ class Solution {
 };
 
 
-# DFS.
+// DFS.
 class Solution{
 	public:
     set<int>vis;
