@@ -9,7 +9,7 @@ The size array will be storing the size for each particular node i.e. size[i] wi
 Typically, the size of a node refers to the number of nodes that are connected to it.
 
 ****************************
-Rank:
+Union by Rank:
 The rank of a node generally refers to the distance (the number of nodes including the leaf node) between the furthest leaf node and the current node. 
 Basically rank includes all the nodes beneath the current node.
 
