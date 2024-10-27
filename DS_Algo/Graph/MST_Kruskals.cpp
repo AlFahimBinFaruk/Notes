@@ -1,7 +1,28 @@
 // https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1
+// https://takeuforward.org/data-structure/disjoint-set-union-by-rank-union-by-size-path-compression-g-46/
+
+/*
+
+Union by size: This is as same as the Union by rank method except this method uses the size to compare the components while connecting. 
+That is why we need a ‘size’ array of size N(no. of nodes) instead of a rank array. 
+The size array will be storing the size for each particular node i.e. size[i] will be the size of the component starting from node i.
+Typically, the size of a node refers to the number of nodes that are connected to it.
+
+****************************
+Rank:
+The rank of a node generally refers to the distance (the number of nodes including the leaf node) between the furthest leaf node and the current node. 
+Basically rank includes all the nodes beneath the current node.
+
+****************************
+What is path compression?
+Basically, connecting each node in a particular path to its ultimate parent refers to path compression. 
+
+
+*/
 class DSU{
     int *parent;
     int *rank;
+    int *size;
 
     public:
         DSU(int n){
@@ -11,6 +32,7 @@ class DSU{
             for(int i=0;i<n;i++){
                 parent[i]=-1;
                 rank[i]=1;
+                size[i]=1;
             }
         }
 
@@ -23,7 +45,7 @@ class DSU{
             return parent[i]=find(parent[i]);
         }
 
-        bool unite(int x,int y){
+        bool uniteByRank(int x,int y){
             int s1=find(x);
             int s2=find(y);
 
@@ -36,6 +58,30 @@ class DSU{
                 }else{
                     parent[s2]=s1;
                     rank[s1]++;
+                }
+
+                return true;
+
+            }
+            return false;
+
+
+        }
+
+
+
+        bool uniteBySize(int x,int y){
+            int s1=find(x);
+            int s2=find(y);
+
+            if(s1!=s2){
+
+                if(size[s1]>size[s2]){
+                    parent[s2]=s1;
+                    size[s1]+=size[s2];
+                }else{
+                    parent[s1]=s2;
+                    size[s2]+=size[s1];
                 }
 
                 return true;
@@ -76,13 +122,11 @@ class Solution
 	        for(int i=0;i<arr.size();i++){
 	            int w=arr[i][0],a=arr[i][1],b=arr[i][2];
 	
-	            // if(dsu.find(a)!=dsu.find(b)){
-	            //     dsu.unite(a,b);
-	            //     cnt+=w;
-	            // }
-	            if(dsu.unite(a,b)){
+	            if(dsu.find(a)!=dsu.find(b)){
+	                dsu.unite(a,b);
 	                cnt+=w;
 	            }
+	            
 	        }
 	
 	        return cnt;
