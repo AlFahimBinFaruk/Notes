@@ -1,15 +1,6 @@
 ## Time and Space complexity of DS & Algos.
-Here's a handy markdown cheat sheet with the time and space complexities of essential data structures and algorithms for interviews.
 
----
-
-Here's a comprehensive markdown sheet with time and space complexities for essential data structures and algorithms commonly encountered in interviews, including their worst-case complexities where applicable:
-
----
-
-# Time and Space Complexity Cheat Sheet
-
-## 1. **Array Operations**
+### **Array Operations**
 
 | Operation            | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
 |----------------------|---------------------------|--------------------------|-------------------|
@@ -22,7 +13,7 @@ Here's a comprehensive markdown sheet with time and space complexities for essen
 
 ---
 
-## 2. **Linked List Operations**
+### **Linked List Operations**
 
 | Operation            | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
 |----------------------|---------------------------|--------------------------|-------------------|
@@ -35,7 +26,7 @@ Here's a comprehensive markdown sheet with time and space complexities for essen
 
 ---
 
-## 3. **Stack Operations**
+### **Stack Operations**
 
 | Operation            | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
 |----------------------|---------------------------|--------------------------|-------------------|
@@ -46,7 +37,7 @@ Here's a comprehensive markdown sheet with time and space complexities for essen
 
 ---
 
-## 4. **Queue Operations**
+### **Queue Operations**
 
 | Operation            | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
 |----------------------|---------------------------|--------------------------|-------------------|
@@ -57,7 +48,7 @@ Here's a comprehensive markdown sheet with time and space complexities for essen
 
 ---
 
-## 5. **Hash Table (Unordered Map)**
+### **Hash Table (Unordered Map)**
 
 | Operation            | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
 |----------------------|---------------------------|--------------------------|-------------------|
@@ -67,7 +58,7 @@ Here's a comprehensive markdown sheet with time and space complexities for essen
 
 ---
 
-## 6. **Binary Search Tree (BST)**
+### **Binary Search Tree (BST)**
 
 | Operation            | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
 |----------------------|---------------------------|--------------------------|-------------------|
@@ -77,7 +68,7 @@ Here's a comprehensive markdown sheet with time and space complexities for essen
 
 ---
 
-## 7. **Binary Heap (Min/Max Heap)**
+### **Binary Heap (Min/Max Heap)**
 
 | Operation            | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
 |----------------------|---------------------------|--------------------------|-------------------|
@@ -87,7 +78,7 @@ Here's a comprehensive markdown sheet with time and space complexities for essen
 
 ---
 
-## 8. **Graph Algorithms**
+### **Graph Algorithms**
 
 | Algorithm                      | Time Complexity                       | Space Complexity   |
 |--------------------------------|---------------------------------------|---------------------|
@@ -100,44 +91,6 @@ Here's a comprehensive markdown sheet with time and space complexities for essen
 | Kruskal’s Algorithm (MST)      | \(O(E \log E)\)                       | \(O(V + E)\)       |
 
 ---
-
-## 9. **Sorting Algorithms**
-
-| Algorithm                      | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
-|--------------------------------|---------------------------|--------------------------|-------------------|
-| Bubble Sort                    | \(O(n^2)\)                | \(O(n^2)\)               | \(O(1)\)         |
-| Selection Sort                 | \(O(n^2)\)                | \(O(n^2)\)               | \(O(1)\)         |
-| Insertion Sort                 | \(O(n^2)\)                | \(O(n^2)\)               | \(O(1)\)         |
-| Merge Sort                     | \(O(n \log n)\)           | \(O(n \log n)\)          | \(O(n)\)         |
-| Quick Sort                     | \(O(n \log n)\)           | \(O(n^2)\)               | \(O(\log n)\)    |
-| Heap Sort                      | \(O(n \log n)\)           | \(O(n \log n)\)          | \(O(1)\)         |
-| Counting Sort                  | \(O(n + k)\)              | \(O(n + k)\)             | \(O(k)\)         |
-| Radix Sort                     | \(O(d \cdot (n + k))\)    | \(O(d \cdot (n + k))\)   | \(O(n + k)\)     |
-
-- \(n\) = number of elements
-- \(V\) = number of vertices
-- \(E\) = number of edges
-- \(k\) = range of input in counting and radix sort
-- \(d\) = number of digits in radix sort
-
----
-
-## 10. **Dynamic Programming**
-
-| Operation                        | Time Complexity        | Space Complexity         |
-|----------------------------------|------------------------|--------------------------|
-| Fibonacci (Memoization)          | \(O(n)\)              | \(O(n)\)                 |
-| Fibonacci (Tabulation)           | \(O(n)\)              | \(O(n)\)                 |
-| Longest Common Subsequence       | \(O(m \cdot n)\)      | \(O(m \cdot n)\)         |
-| 0/1 Knapsack Problem             | \(O(n \cdot W)\)      | \(O(n \cdot W)\)         |
-| Longest Increasing Subsequence   | \(O(n^2)\)            | \(O(n)\)                 |
-
----
-
-
-
-
-
 
 ### Data Structures
 
@@ -180,15 +133,6 @@ Here's a comprehensive markdown sheet with time and space complexities for essen
 | **Depth-First Search**    | O(V+E)                | O(V+E)                    | O(V+E)                   | O(V)             |
 | **Breadth-First Search**  | O(V+E)                | O(V+E)                    | O(V+E)                   | O(V)             |
 
-### Dynamic Programming
-
-| Problem                          | Time Complexity | Space Complexity |
-|----------------------------------|-----------------|------------------|
-| **Fibonacci Sequence**           | O(n)           | O(n)             |
-| **Knapsack Problem**             | O(n \* W)      | O(n \* W)        |
-| **Longest Common Subsequence**   | O(n \* m)      | O(n \* m)        |
-| **Longest Increasing Subsequence** | O(n^2)       | O(n)             |
-| **Edit Distance**                | O(n \* m)      | O(n \* m)        |
 
 ### Graph Algorithms
 
