@@ -119,6 +119,19 @@
 
 ---
 
+### Time Complexity of `std::set` in C++
+
+| Operation                    | Time Complexity | 
+|------------------------------|-----------------|
+| **Insertion** (`insert`)     | \( O(\log n) \) |
+| **Deletion** (`erase`)       | \( O(\log n) \) |
+| **Search** (`find`)          | \( O(\log n) \) |
+| **Count** (`count`)          | \( O(\log n) \) |
+| **Minimum Element** (`begin`) | \( O(1) \)      |
+| **Maximum Element** (`rbegin`) | \( O(1) \)    | 
+| **Lower Bound** (`lower_bound`) | \( O(\log n) \) |
+| **Upper Bound** (`upper_bound`) | \( O(\log n) \) |
+
 ### **Data Structures Summary**
 
 | Data Structure        | Access    | Search    | Insertion | Deletion | Space   |
@@ -131,3 +144,5 @@
 | **Binary Search Tree**| O(log n)  | O(log n)  | O(log n)  | O(log n) | O(n)    |
 | **Heap**              | O(n)      | O(n)      | O(log n)  | O(log n) | O(n)    |
 | **Graph**             | -         | O(V + E)  | O(1)      | O(1)     | O(V + E)|
+
+
