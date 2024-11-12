@@ -1,5 +1,7 @@
+## Manacher's Algo.
 * If we don't prepocessed the string it will not work for Test cases like : abba where we have even lenght palindrome.
 because then we have to handle for even and odd separately.
+* [Tushar Roy](https://youtu.be/V-sEwsca1ak?si=CECgKcC6uYNtJec-)
 ```cpp
 // O(2N)=> O(N)
 // for both even and odd length.
