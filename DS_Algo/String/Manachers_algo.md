@@ -23,7 +23,7 @@ int manacher_algo(string &s){
         if(i<R){
             int mirr=(2*C)-i;
             //if i is center then we can at max expand it till right boundry,it can happen that
-            //mirror for i expand beyond the current boundry range from left so thats why we are checking it.
+            //mirror of i expand beyond the current boundry range from left so thats why we are checking it.
             P[i]=min(R-i,P[mirr]);
         }
 
