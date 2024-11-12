@@ -1,5 +1,5 @@
 ## Manacher's Algo.
-* If we don't prepocessed the string it will not work for Test cases like : "abba" where we have even lenght palindrome.
+* If we don't prepocessed the string it will not work for Test cases like : "abba" where we have even length palindrome.
 because then we have to handle for even and odd separately.
 * [Tushar Roy](https://youtu.be/V-sEwsca1ak?si=CECgKcC6uYNtJec-)
 ```cpp
@@ -18,10 +18,12 @@ int manacher_algo(string &s){
 
     for(int i=1;i<s.size()-1;i++){
         
-        // the concept of mirroring is main thing that reduce the time complexity from O(N^2) -> O(N) as we don't have to calculate the lenght we have calcualte before.
+        // the concept of mirroring is main thing that reduce the time complexity from O(N^2) -> O(N)
+        // as we don't have to calculate the lenght we have calcualte before.
         if(i<R){
             int mirr=(2*C)-i;
-            //if i is center then we can at max expand it till right boundry,it can happen that mirror for i expand beyond the current boundry range from left so thats why we are checking it.
+            //if i is center then we can at max expand it till right boundry,it can happen that
+            //mirror for i expand beyond the current boundry range from left so thats why we are checking it.
             P[i]=min(R-i,P[mirr]);
         }
 
