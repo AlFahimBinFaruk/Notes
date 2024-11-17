@@ -1,6 +1,6 @@
 ## Z Function
 * [Tushar roy](https://www.youtube.com/watch?v=CpZh4eF8QBw)
-
+* Use cases: Text searching, Pattern matching
 * Time: O(2L)~O(L)
 * Space: O(N+M)
 ```cpp
