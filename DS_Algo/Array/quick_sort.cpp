@@ -1,30 +1,54 @@
 // https://takeuforward.org/data-structure/quick-sort-algorithm/
+
 /*
 Time : O(N*logN)
 Space: O(1)+O(N) recursion stack complexity.
 */
-int partition(vector<int>&arr,int low,int high){
-    int pivot=arr[low];
-    int i=low,j=high;
 
-    while(i<j){
-        while(arr[i]<=pivot and i<high){
-            i++;
-        }
 
-        while(arr[j]>=pivot and j>low){
-            j--;
+// int partition(vector<int>&arr,int low,int high){
+//     int pivot=arr[low];
+//     int i=low,j=high;
+
+//     while(i<j){
+//         while(arr[i]<=pivot and i<high){
+//             i++;
+//         }
+
+//         while(arr[j]>=pivot and j>low){
+//             j--;
+//         }
+//         if(i<j){
+//             swap(arr[i],arr[j]);
+//         }
+//     }
+
+//     swap(arr[low],arr[j]);
+
+//     return j;
+
+// }
+
+int partition(vector<int>&nums,int low,int high){
+    int pivot=nums[low];
+    int l=low+1,r=high;
+    while(l<=r){
+            
+        if(nums[l]>pivot and nums[r]<pivot){
+            swap(nums[l],nums[r]);
+            l++,r--;
         }
-        if(i<j){
-            swap(arr[i],arr[j]);
+        if(nums[l]<=pivot){
+            l++;
+        }
+        if(nums[r]>=pivot){
+            r--;
         }
     }
-
-    swap(arr[low],arr[j]);
-
-    return j;
-
+    swap(nums[low],nums[r]);
+    return r;
 }
+
 
 void qs(vector<int>&arr,int low,int high){
     if(low<high){
@@ -33,10 +57,6 @@ void qs(vector<int>&arr,int low,int high){
         qs(arr,pt+1,high);
     }
 }
-
-
-
-
 
 
 int main() {
