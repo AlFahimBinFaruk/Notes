@@ -1,6 +1,6 @@
 ## Rabin Karp Algorithm.
 * [Tushar Roy](https://youtu.be/H4VrKHVG5qI?si=hgcylhvnJ5si8FJo)
-* Use cases: Uses Has for Multiple Text searching, Pattern matching.
+* Use cases: Uses Hash for Multiple Text searching, Pattern matching.
 * Time: O(N+M), worst: O(N*M)
 * Space: O(N+M)
 ```cpp
