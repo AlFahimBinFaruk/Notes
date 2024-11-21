@@ -1,7 +1,7 @@
 ## Rabin Karp Algorithm.
 * [Tushar Roy](https://youtu.be/H4VrKHVG5qI?si=hgcylhvnJ5si8FJo)
 * Use cases: Uses Has for Multiple Text searching, Pattern matching.
-* Time: O(N+M) / O(N*M)
+* Time: O(N+M), worst: O(N*M)
 * Space: O(N+M)
 ```cpp
 vector<int> rabin_karp(string &p,string &t){
