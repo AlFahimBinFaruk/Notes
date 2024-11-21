@@ -22,4 +22,12 @@ vector<int> z_function(string s) {
     }
     return z;
 }
+
+signed main(){
+    string a,b;cin>>a>>b;
+    //finding b inside a.
+    b+="$"
+    b+=a;
+    z_function(b);
+}
 ```
