@@ -1,11 +1,10 @@
-// https://takeuforward.org/data-structure/quick-sort-algorithm/
-
-/*
-Time : O(N*logN)
-Space: O(1)+O(N) recursion stack complexity.
-*/
+## Quick sort algo.
+* [Striver](https://takeuforward.org/data-structure/quick-sort-algorithm/)
+* Time : O(N*logN)/ O(N^2)when arr is already sorted.
+* Space: O(1)+O(N) recursion stack complexity.
 
 
+```cpp
 // int partition(vector<int>&arr,int low,int high){
 //     int pivot=arr[low];
 //     int i=low,j=high;
@@ -68,3 +67,4 @@ int main() {
     
     return 0;
 }
+```
