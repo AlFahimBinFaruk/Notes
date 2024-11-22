@@ -1,6 +1,6 @@
-## Radix sort algo.
+## Radix Sort Algo.
 * [Farhan hasan](https://www.youtube.com/watch?v=cJYG72LWLIg)
-* [counting sort](https://www.youtube.com/watch?v=uvOe510RmWc)
+* [Counting sort](https://www.youtube.com/watch?v=uvOe510RmWc)
 * Time: O(d*(n+b))
 * Space: O(n+b)
 ```cpp
