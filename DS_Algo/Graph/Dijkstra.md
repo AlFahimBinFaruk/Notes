@@ -43,7 +43,6 @@ class Solution {
             }
             ans[cur.second]=cur.first;
 
-            ans[cur.second]=cur.first;
             for(pair<int,int>c:adj[cur.second]){
                 int cost=cur.first+c.second;
                 if(cost<ans[c.first]){
