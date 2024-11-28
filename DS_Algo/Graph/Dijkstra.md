@@ -1,5 +1,6 @@
 ### Dijkstra
 * [Problem Link](https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1)
+* Dijkstra will fail(TLE) if the Graph contains Negative Cycle.
 * Shortest path is DAG approach won't work because it dosen't make sure that we are processing all the possible parents
 of x before processing x like this test case:
 ```text
