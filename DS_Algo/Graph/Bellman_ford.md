@@ -2,6 +2,7 @@
 * [Striver](https://www.youtube.com/watch?v=0vVofAhAYjc)
 * [Problem](https://www.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/1)
 * Bellman ford works to find the sortest path from src node to other node when the weights of the Nodes can be Negative.
+* A node can have at max V-1 other connectinons so V-1 iterations is enough to get the overall optimal path to reach the node as by this time we have explored every possible combinations so if in Vth iteration we still find any Nodes whch values can still be minimized that means there is an Negative cyclce.
 * Time:O(V*E)
 * Space:O(V)
 ```cpp
