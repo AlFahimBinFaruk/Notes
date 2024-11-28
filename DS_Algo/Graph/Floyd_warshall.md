@@ -1,7 +1,7 @@
 ## Floye warshall algo.
 * [Problem](https://www.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1)
 * [Striver](https://www.youtube.com/watch?v=YbY8cVwWAvw)
-* We are exploring paths to A->B via all possible I which is making sure that at last we have the Shortest path.
+* We are exploring paths to "A->B" via all possible "I" which is making sure that at last we have the Shortest path.
 * Works for both DG,UG and Negatives weights.
 * Time: O(V^3)
 * Space: O(V^2)
