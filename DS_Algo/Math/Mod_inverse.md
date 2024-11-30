@@ -1,4 +1,5 @@
 ## Modulas Inverse
+* Find a^b more optimally.
 * Time: log(b)
 ```cpp
 const long long mod=1e9+7;
