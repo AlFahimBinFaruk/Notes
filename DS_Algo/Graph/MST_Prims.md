@@ -1,3 +1,5 @@
+## MST Prims algo.
+* [MST Explanation](https://www.youtube.com/watch?v=ZSPjZuZWCMEa)
 * https://takeuforward.org/data-structure/prims-algorithm-minimum-spanning-tree-c-and-java-g-45/
 * Spanning Tree: A tree in which we have N nodes and N-1 edges and all nodes are reachable from each other.
 1. Original graph can have N+X edges , but MST Must have N-1 edges.
