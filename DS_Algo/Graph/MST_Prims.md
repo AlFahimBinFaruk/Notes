@@ -1,11 +1,12 @@
-// https://takeuforward.org/data-structure/prims-algorithm-minimum-spanning-tree-c-and-java-g-45/
+* https://takeuforward.org/data-structure/prims-algorithm-minimum-spanning-tree-c-and-java-g-45/
 * Spanning Tree: A tree in which we have N nodes and N-1 edges.
-/*
+
 
 1. Original graph can have N+X edges , but MST Must have N-1 edges.
 2. N-1 Edges is more than enough so that we can visit from AnyNode to AnyNode.
 3. More than N-1 edges means there are some extra edges which we don't need.
-*/
+
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -77,4 +78,4 @@ int main()
 
     return 0;
 }
-
+```
