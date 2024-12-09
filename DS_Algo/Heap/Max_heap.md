@@ -88,15 +88,12 @@ signed main(){
     
 
     int n;cin>>n;
-    
 
     MaxHeap mxHeap;
 
     for(int i=0;i<n;i++){
         int nm;cin>>nm;
-
         mxHeap.push(nm);
-
     }
 
     // mxHeap.changeVal(2,0);
