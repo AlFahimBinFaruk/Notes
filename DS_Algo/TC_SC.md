@@ -1,3 +1,118 @@
+## Common Time Complexities and Their Names
+
+### **1. Constant Time Complexity - `O(1)`**
+- **Name:** Constant Time
+- **Description:** The algorithm takes the same amount of time regardless of the input size.
+- **Example:** Accessing an element in an array by index.
+
+---
+
+### **2. Logarithmic Time Complexity - `O(log N)`**
+- **Name:** Logarithmic Time
+- **Description:** The algorithm's time grows logarithmically with the input size.
+- **Example:** Binary search in a sorted array.
+
+---
+
+### **3. Linear Time Complexity - `O(N)`**
+- **Name:** Linear Time
+- **Description:** The time taken grows linearly with the size of the input.
+- **Example:** Traversing an array.
+
+---
+
+### **4. Linearithmic Time Complexity - `O(N log N)`**
+- **Name:** Linearithmic Time
+- **Description:** Combines linear and logarithmic growth; common in efficient sorting algorithms.
+- **Example:** Merge sort, quicksort (average case).
+
+---
+
+### **5. Quadratic Time Complexity - `O(N^2)`**
+- **Name:** Quadratic Time
+- **Description:** The time taken grows with the square of the input size.
+- **Example:** Nested loops, such as comparing all pairs of elements.
+
+---
+
+### **6. Cubic Time Complexity - `O(N^3)`**
+- **Name:** Cubic Time
+- **Description:** The time grows with the cube of the input size.
+- **Example:** Triple nested loops, such as matrix multiplication.
+
+---
+
+### **7. Polynomial Time Complexity - `O(N^k)`**
+- **Name:** Polynomial Time
+- **Description:** A generalization of quadratic and cubic times; `k` is any constant.
+- **Example:** Certain graph algorithms, like finding all paths of a fixed length `k`.
+
+---
+
+### **8. Exponential Time Complexity - `O(2^N)`, `O(3^N)`, etc.**
+- **Name:** Exponential Time
+- **Description:** The time grows exponentially with the input size.
+- **Example:** Solving the traveling salesman problem (TSP) using brute force.
+
+---
+
+### **9. Factorial Time Complexity - `O(N!)`**
+- **Name:** Factorial Time
+- **Description:** The time grows with the factorial of the input size.
+- **Example:** Brute-force solutions to the traveling salesman problem.
+
+---
+
+### **10. Square Root Time Complexity - `O(√N)`**
+- **Name:** Square Root Time
+- **Description:** The time grows with the square root of the input size.
+- **Example:** Prime factorization or loop iterations up to `√N`.
+
+---
+
+### **11. Log-Logarithmic Time Complexity - `O(log(log N))`**
+- **Name:** Double Logarithmic Time
+- **Description:** Extremely fast-growing time complexity; rare in practice.
+- **Example:** Certain advanced computational techniques.
+
+---
+
+### **12. Sublinear Time Complexity - `O(N^c)` where `0 < c < 1`**
+- **Name:** Sublinear Time
+- **Description:** Less than linear growth; often found in approximate algorithms.
+- **Example:** Binary search or sampling-based techniques.
+
+---
+
+### **13. Superlinear Time Complexity - `O(N log N)`, `O(N^(1+c))`**
+- **Name:** Superlinear Time
+- **Description:** Slightly faster than quadratic but slower than linearithmic.
+- **Example:** Algorithms slightly faster than naive approaches.
+
+---
+
+### **14. Constant-Amortized Time Complexity**
+- **Name:** Amortized Constant Time
+- **Description:** The average time for a sequence of operations is constant.
+- **Example:** Dynamic array resizing in `push` operations.
+
+---
+
+### **15. Subquadratic Time Complexity**
+- **Name:** Subquadratic Time
+- **Description:** Faster than quadratic (`O(N^2)`) but slower than linearithmic (`O(N log N)`).
+- **Example:** Shell sort (worst-case).
+
+---
+
+### **16. Quasilinear Time Complexity**
+- **Name:** Quasilinear Time
+- **Description:** Similar to `O(N log N)` but specific to sorting and divide-and-conquer algorithms.
+- **Example:** Heap sort.
+
+---
+
+
 ## Time and Space Complexity of DS & Algos
 
 ### **Array Operations**
