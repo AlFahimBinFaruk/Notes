@@ -1,4 +1,6 @@
-// Kahn's Algo.
+## Kahn's Algo.
+* Time: O(N+M), S:O(N)
+```cpp
 class Solution {
 public:
     // Function to return list containing vertices in Topological order.
@@ -41,9 +43,11 @@ public:
         
     }
 };
+```
 
 
-// DFS.
+## DFS.
+```cpp
 class Solution{
 public:
     set<int>vis;
@@ -75,3 +79,4 @@ public:
          return ans;
      }
 }
+```
