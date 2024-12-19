@@ -42,6 +42,7 @@ void sol(TreeNode* root,vector<int>&arr){
 
 ### Iterative - 1 stack
 ```cpp
+// one
 void sol(TreeNode* root,vector<int>&arr){
     stack<TreeNode *>s;
     
@@ -64,4 +65,35 @@ void sol(TreeNode* root,vector<int>&arr){
         }
     }
 }
+// two
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int>arr;
+        vector<TreeNode*>brr;
+        
+        while(true){
+            if(root){
+                brr.push_back(root);
+                root=root->left;
+            }else if(brr.size()>0){
+                
+                TreeNode* temp=NULL;
+
+                while(brr.size()>0 and brr.back()->right==temp){
+                    arr.push_back(brr.back()->val);
+                    temp=brr.back();
+                    brr.pop_back();
+                }
+                if(brr.size()>0){
+                    root=brr.back()->right;
+                }
+            }else break;
+        }
+       
+        
+        
+        return arr;
+    }
+};
 ```
