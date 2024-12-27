@@ -75,3 +75,70 @@ int main(){
     return 0;
 }
 ```
+
+### With Linked List
+```cpp
+class Node{
+    public:
+        int val;
+        Node* next;
+        Node(){
+            val=0;
+            next=NULL;
+        }
+        Node(int newVal){
+            val=newVal;
+            next=NULL;
+        }
+};
+
+class Queue{
+    private:
+        Node* head;
+        Node* temp;
+    public:
+
+        Queue(){
+            head=NULL;
+            temp=NULL;
+        }
+
+        void enqueue(int val){
+            if(head==NULL){
+                head=new Node(val);
+                temp=head;
+            }else{
+                temp->next=new Node(val);
+                temp=temp->next;
+            }
+        }
+
+        void dequeue(){
+            Node* tm=head->next;
+            delete head;
+            head=tm;
+            if(head==NULL){
+                temp=NULL;
+            }
+        }
+
+        int front(){
+            if(head==NULL){
+                return -1;
+            }
+            return head->val;
+        }
+
+        bool isEmpty(){
+            return head==NULL;
+        }
+
+
+        ~Queue(){
+            delete head;
+            delete temp;
+        }
+        
+
+};
+```
