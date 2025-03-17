@@ -4,3 +4,5 @@
 ### Important.
 1. List: [Two sum](https://leetcode.com/problems/two-sum/)
 2. Dictionary and Set: [Divide arr into equal pairs](https://leetcode.com/problems/divide-array-into-equal-pairs/)
+3. Pointer Traversal: [Reverse LL](https://leetcode.com/problems/reverse-linked-list/)
+
