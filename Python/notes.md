@@ -2,4 +2,5 @@
 * Python modules are simply files with .py extension.
 * Python package is a container that contains various modules.
 ### Important.
-1. Dictionay,List in python: [Two sum](https://leetcode.com/problems/two-sum/)
+1. List: [Two sum](https://leetcode.com/problems/two-sum/)
+2. Dictionary: [Divide arr into equal pairs](https://leetcode.com/problems/divide-array-into-equal-pairs/)
