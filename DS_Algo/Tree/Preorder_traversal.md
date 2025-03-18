@@ -114,6 +114,7 @@ func preorderTraversal(root *TreeNode) []int {
 }
 ```
 ## Python
+### DFS
 ```py
 class Solution:
     def dfs(self,root,ans):
@@ -125,5 +126,25 @@ class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         ans=[]
         self.dfs(root,ans)
+        return ans
+```
+### BFS
+```py
+class Solution:
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        q=[]
+        ans=[]
+        if root==None:
+            return ans
+        q.append(root)
+
+        while len(q)>0:
+            temp=q.pop()
+            ans.append(temp.val)
+            if temp.right:
+                q.append(temp.right)
+            if temp.left:
+                q.append(temp.left)
+        
         return ans
 ```
