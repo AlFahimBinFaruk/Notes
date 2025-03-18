@@ -54,3 +54,29 @@ func levelOrder(root *TreeNode) [][]int {
     return ans;
 }
 ```
+## Python
+```py
+from queue import Queue
+
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        ans=[]
+        if root==None:
+            return ans
+        q=Queue()
+        q.put(root)
+        while q.qsize()>0:
+            n=q.qsize()
+            brr=[]
+            while n>0:
+                n-=1
+                temp=q.get()
+                brr.append(temp.val)
+                if temp.left:
+                    q.put(temp.left)
+                if temp.right:
+                    q.put(temp.right)
+            ans.append(brr)
+        
+        return ans
+```
