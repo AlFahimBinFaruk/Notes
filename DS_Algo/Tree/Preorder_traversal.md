@@ -66,3 +66,21 @@ public:
     }
 };
 ```
+
+## Go Lang
+### DFS
+```go
+func dfs(root *TreeNode,arr *[]int){
+    if(root==nil){
+        return;
+    }
+    *arr=append(*arr,root.Val);
+    dfs(root.Left,arr);
+    dfs(root.Right,arr);
+}
+func preorderTraversal(root *TreeNode) []int {
+    var arr=[]int{};
+    dfs(root,&arr);
+    return arr;
+}
+```
