@@ -113,3 +113,17 @@ func preorderTraversal(root *TreeNode) []int {
     return ans;
 }
 ```
+## Python
+```py
+class Solution:
+    def dfs(self,root,ans):
+        if root==None:
+            return
+        ans.append(root.val)
+        self.dfs(root.left,ans)
+        self.dfs(root.right,ans)
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        ans=[]
+        self.dfs(root,ans)
+        return ans
+```
