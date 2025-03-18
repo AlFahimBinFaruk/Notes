@@ -84,3 +84,32 @@ func preorderTraversal(root *TreeNode) []int {
     return arr;
 }
 ```
+### BFS
+```go
+import "container/list"
+
+func preorderTraversal(root *TreeNode) []int {
+    
+    var st=list.New();
+    var ans=[]int{};
+    if root==nil{
+        return ans;
+    }
+    st.PushBack(root);
+    for st.Len()>0{
+        var elm=st.Back();
+        st.Remove(elm);
+
+        var temp *TreeNode=elm.Value.(*TreeNode);
+        ans=append(ans,temp.Val);
+        if temp.Right!=nil{
+            st.PushBack(temp.Right);
+        }
+        if temp.Left!=nil{
+            st.PushBack(temp.Left);
+        }
+        
+    }
+    return ans;
+}
+```
