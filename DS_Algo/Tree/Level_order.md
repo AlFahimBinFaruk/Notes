@@ -1,5 +1,6 @@
 * root->left->right
 * T O(N) , S O(N)
+## CPP
 ```cpp
 void sol(TreeNode<int>* root,vector<int>&arr){
     if(root==NULL)return;
@@ -17,5 +18,39 @@ void sol(TreeNode<int>* root,vector<int>&arr){
             q.push(root->right);
         }
     }
+}
+```
+## Go Lang
+```go
+import "container/list";
+
+func levelOrder(root *TreeNode) [][]int {
+
+    var q=list.New();
+    var ans=[][]int{};
+    if root==nil{
+        return ans;
+    }
+
+    q.PushBack(root);
+    for q.Len()>0{
+        var n=q.Len();
+        var brr=[]int{};
+        for n>0{
+            n-=1;
+            var elm=q.Front();
+            q.Remove(elm);
+            var temp=elm.Value.(*TreeNode);
+            brr=append(brr,temp.Val);
+            if temp.Left!=nil{
+                q.PushBack(temp.Left);
+            }
+            if temp.Right!=nil{
+                q.PushBack(temp.Right);
+            }
+        }
+        ans=append(ans,brr);
+    }    
+    return ans;
 }
 ```
