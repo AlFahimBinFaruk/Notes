@@ -7,3 +7,4 @@
 3. Pointer Traversal: [Reverse LL](https://leetcode.com/problems/reverse-linked-list/)
 4. Recursion: [Invert Tree](https://leetcode.com/problems/invert-binary-tree/submissions/1578218203/)
 5. New Tree Creation: [Invert Tree](https://leetcode.com/problems/invert-binary-tree/submissions/1578317240/)
+6. BFS ADJ Matrix:
