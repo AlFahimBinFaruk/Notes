@@ -4,3 +4,4 @@
 3. Pointer Traversal: [Reverse LL](https://leetcode.com/problems/reverse-linked-list/)
 4. Recursion: [Invert Tree](https://leetcode.com/problems/invert-binary-tree/submissions/1578215026/)
 5. New Tree Creation: [Invert Tree](https://leetcode.com/problems/invert-binary-tree/submissions/1578313766/)
+6. DFS and BFS in Graph: [Number of Island](https://leetcode.com/problems/number-of-islands/)
