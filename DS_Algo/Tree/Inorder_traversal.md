@@ -76,3 +76,20 @@ class Solution:
         self.dfs(root,ans)
         return ans
 ```
+### Iteration
+```py
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        st=[]
+        ans=[]
+        while True:
+            if root:
+                st.append(root)
+                root=root.left
+            elif len(st)>0:
+                cur=st.pop()
+                ans.append(cur.val)
+                root=cur.right
+            else: break
+        return ans
+```
