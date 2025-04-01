@@ -1,6 +1,6 @@
 * left->root->right.
 * Inorder traversal always gives you an sorted array.
-### with recursion
+### Recursion
 ```cpp
 void dfs(TreeNode* root,vector<int>&arr){
       if(root==NULL)return;
@@ -9,7 +9,7 @@ void dfs(TreeNode* root,vector<int>&arr){
       dfs(root->right,arr);
 }
 ```
-### with iteration
+### Iteration
 ```cpp
 void sol(TreeNode* root,vector<int>&arr){
     stack<TreeNode *>s;
@@ -92,4 +92,22 @@ class Solution:
                 root=cur.right
             else: break
         return ans
+```
+
+## Go
+### Recursion
+```go
+func dfs(root *TreeNode,ans *[]int){
+    if root==nil{
+        return
+    }
+    dfs(root.Left,ans)
+    *ans=append(*ans,root.Val)
+    dfs(root.Right,ans)
+}
+func inorderTraversal(root *TreeNode) []int {
+    ans:=[]int{}
+    dfs(root,&ans)
+    return ans
+}
 ```
