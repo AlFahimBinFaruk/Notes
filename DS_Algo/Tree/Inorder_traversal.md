@@ -111,3 +111,24 @@ func inorderTraversal(root *TreeNode) []int {
     return ans
 }
 ```
+### Iteration
+```go
+func inorderTraversal(root *TreeNode) []int {
+    ans:=[]int{}
+    st:=[]*TreeNode{}
+    for true{
+        if root!=nil{
+            st=append(st,root)
+            root=root.Left
+        }else if len(st)>0{
+            cur:=st[len(st)-1]
+            st=st[:len(st)-1]
+            ans=append(ans,cur.Val)
+            root=cur.Right
+        }else{
+            break
+        }
+    }
+    return ans
+}
+```
