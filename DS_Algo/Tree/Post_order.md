@@ -97,3 +97,20 @@ public:
     }
 };
 ```
+## Go
+### Recursion
+```go
+func dfs(root *TreeNode,ans *[]int){
+    if root==nil{
+        return
+    }
+    dfs(root.Left,ans)
+    dfs(root.Right,ans)
+    *ans=append(*ans,root.Val)
+}
+func postorderTraversal(root *TreeNode) []int {
+    ans:=[]int{}
+    dfs(root,&ans)
+    return ans
+}
+```
