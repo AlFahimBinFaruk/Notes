@@ -114,3 +114,31 @@ func postorderTraversal(root *TreeNode) []int {
     return ans
 }
 ```
+### Iteration
+```go
+func postorderTraversal(root *TreeNode) []int {
+    ans:=[]int{}
+    st:=[]*TreeNode{}
+    for true{
+        if root!=nil{
+            st=append(st,root)
+            root=root.Left
+        }else if len(st)>0{
+            var prev *TreeNode=nil
+            for len(st)>0 && st[len(st)-1].Right==prev{
+                prev=st[len(st)-1]
+                st=st[:len(st)-1]
+                ans=append(ans,prev.Val)
+            }
+            if len(st)==0{
+                break
+            }else{
+                root=st[len(st)-1].Right
+            }
+        }else{
+            break
+        }
+    }
+    return ans
+}
+```
