@@ -142,3 +142,24 @@ func postorderTraversal(root *TreeNode) []int {
     return ans
 }
 ```
+## Python
+### Iteration
+```py
+class Solution:
+    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        ans=[]
+        st=[]
+        while True:
+            if root:
+                st.append(root)
+                root=root.left
+            elif len(st)>0:
+                prev=None
+                while len(st)>0 and st[len(st)-1].right==prev:
+                    prev=st.pop()
+                    ans.append(prev.val)
+                if len(st)==0:break
+                else: root=st[len(st)-1].right
+            else: break
+        return ans
+```
