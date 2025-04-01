@@ -60,3 +60,19 @@ while (root){
     }
 }
 ```
+## Python
+### Recursion
+```py
+class Solution:
+    def dfs(self,cur,ans):
+        if cur==None:
+            return
+        self.dfs(cur.left,ans)
+        ans.append(cur.val)
+        self.dfs(cur.right,ans)
+
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        ans=[]
+        self.dfs(root,ans)
+        return ans
+```
