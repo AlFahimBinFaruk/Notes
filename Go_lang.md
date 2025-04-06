@@ -5,6 +5,7 @@
 4. Recursion: [Invert Tree](https://leetcode.com/problems/invert-binary-tree/submissions/1578215026/)
 5. New Tree Creation: [Invert Tree](https://leetcode.com/problems/invert-binary-tree/submissions/1578313766/)
 6. DFS and BFS in Graph: [Number of Island](https://leetcode.com/problems/number-of-islands/)
+7. DP recursion and iteration: [LPS](https://leetcode.com/problems/longest-palindromic-substring/)
 
 ### Snippets
 * String() function
