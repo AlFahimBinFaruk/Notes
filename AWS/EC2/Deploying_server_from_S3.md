@@ -4,7 +4,7 @@
 # ---- CONFIGURE THESE ----
 S3_BUCKET="fm-backend-bucket"
 S3_FOLDER="fm_backend"
-APP_DIR="/home/ec2-user/fm_backend"
+APP_DIR="/home/ec2-user/fm_backend" # "/home/ec2-user" this is default path in Amazon linux AMI
 APP_ENTRY="main:app"
 APP_PORT="80"
 # -------------------------
