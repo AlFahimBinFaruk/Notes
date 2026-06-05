@@ -1,4 +1,3 @@
-```bash
 #!/bin/bash
 # ---- CONFIGURE THESE ----
 S3_BUCKET="fm-backend-bucket"
@@ -26,4 +25,4 @@ sudo nohup uvicorn $APP_ENTRY --host 0.0.0.0 --port $APP_PORT > $APP_DIR/app.log
 
 echo ""
 echo "✅ App running"
-```
+
