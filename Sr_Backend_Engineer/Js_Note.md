@@ -1,4 +1,39 @@
-1. Eventloop: The Event Loop is a mechanism that allows JavaScript to handle asynchronous operations without blocking the execution of other code. It is the mechanism behid why async/await , promises,callback work(execute code asynchronously). Eventloop is implemented by the runtime environment, such as a browser or Node.js, rather than being a standalone feature of the JavaScript language.
+1. Async I/O: Performs an I/O operation without making the JavaScript thread wait.
+
+1. Eventloop: It is the mechanism behid why async/await , promises,callback work(execute code asynchronously). Eventloop is implemented by the runtime environment, such as a browser or Node.js, rather than being a standalone feature of the JavaScript language.
+Eventloop ensures that js executes appropriate callback when the I/O operations finishes.
+Eventloop & Async I/O works together.
+
+```js
+const fs = require("node:fs/promises");
+
+async function readUsers() {
+  console.log("A: Starting file read");
+
+  /*
+   * 1. Node.js delegates the file read to libuv's worker pool.
+   * 2. await suspends this function, allowing other JS to run.
+   * 3. Once reading finishes, the event loop processes
+   *    the I/O completion, which fulfills the Promise.
+   * 4. The function resumes after await via a microtask.
+   */
+  const data = await fs.readFile("users.json", "utf8");
+
+  console.log("C: File loaded", data);
+}
+
+readUsers();
+
+console.log("B: Other JavaScript");
+```
+Important distinction
+- libuv worker pool: Performs the file-reading work.
+- Event loop: Processes the I/O completion callback.
+- Promise: Represents the eventual file-reading result.
+- await: Suspends the function until the Promise settles.
+- Microtask queue: Schedules the function's continuation after the Promise fulfills.
+Mental model: Async I/O handles the operation without blocking JavaScript; the event loop processes its completion, and the Promise microtask resumes the suspended function.
+
 
 1. JavaScript executes code synchronously by default, but Node.js provides asynchronous, non-blocking APIs for operations like file I/O and networking.
 
