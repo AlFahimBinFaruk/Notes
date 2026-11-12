@@ -1,8 +1,32 @@
 1. Async I/O
+
    Async I/O performs an I/O operation without blocking the JavaScript thread.
 
+   ```js
+   const fs = require("node:fs/promises");
+
+   async function readData() {
+     console.log("A");
+
+     const data = await fs.readFile("users.json", "utf8");
+
+     console.log("C", data);
+   }
+
+   readData();
+
+   console.log("B");
+   ```
+
+   When `await` is initiated, the rest of the JavaScript code is not blocked. Async I/O ensures that.
+
+   There are two main types of I/O:
+   - File I/O: file-related operations
+   - Network I/O: anything exchanged over a network
+
 2. Event loop
-   The event loop is the mechanism behind why async/await, promises, and callbacks work asynchronously. It is implemented by the runtime environment, such as a browser or Node.js, rather than being a standalone feature of the JavaScript language.
+
+   The event loop is the mechanism behind why async/await, promises, and callbacks work asynchronously. It is implemented by the runtime environment, such as the browser or Node.js, rather than being a standalone feature of the JavaScript language.
 
    The event loop ensures that JavaScript executes the appropriate callback when an I/O operation finishes. The event loop and async I/O work together.
 
@@ -30,17 +54,18 @@
    ```
 
    Important distinction:
-   - libuv worker pool: Performs the file-reading work.
-   - Event loop: Processes the I/O completion callback.
-   - Promise: Represents the eventual file-reading result.
-   - await: Suspends the function until the Promise settles.
-   - Microtask queue: Schedules the function's continuation after the Promise fulfills.
+   - libuv worker pool: performs the file-reading work
+   - event loop: processes the I/O completion callback
+   - Promise: represents the eventual file-reading result
+   - await: suspends the function until the Promise settles
+   - microtask queue: schedules the function's continuation after the Promise fulfills
 
    Mental model: Async I/O handles the operation without blocking JavaScript; the event loop processes its completion, and the Promise microtask resumes the suspended function.
 
 3. JavaScript executes code synchronously by default, but Node.js provides asynchronous, non-blocking APIs for operations like file I/O and networking.
 
 4. Callback
+
    A callback is a function passed as an argument to another function, which can execute it when needed. There are 2 types of callbacks: synchronous and asynchronous.
 
    - Synchronous
@@ -71,6 +96,7 @@
    ```
 
 5. Async/Await
+
    The `async` keyword declares a function as asynchronous and allows the use of `await` inside it. When JavaScript encounters `await`, execution of that function is suspended until the awaited Promise settles, while code outside the function can continue executing.
 
    Once the Promise resolves, execution resumes from the statement following `await`. If the Promise rejects, an error is thrown at the `await` expression.
@@ -86,6 +112,7 @@
    ```
 
 6. Promise
+
    A Promise in JavaScript is an object that represents the eventual success or failure of an operation, usually an asynchronous task such as reading a file, querying a database, or calling an API.
 
    ```js
@@ -103,4 +130,112 @@
    ```
 
 7. Libuv
+
    **Libuv** is a C library used by Node.js for asynchronous I/O, event-loop functionality, and thread-pool operations.
+
+8. Buffer
+
+   A Buffer is a fixed-length sequence of bytes stored in memory.
+   Node.js uses buffers when working with binary data such as images, videos, files, and network packets.
+
+   ```js
+   const { Buffer } = require("node:buffer");
+
+   const data = Buffer.from("Hello");
+
+   console.log(data);
+   // <Buffer 48 65 6c 6c 6f>
+
+   console.log(data.toString());
+   // Hello
+
+   console.log(data.length);
+   // 5
+   ```
+
+9. Stream
+
+   A Stream is an abstraction for processing data incrementally rather than requiring all the data at once.
+
+   ```js
+   const fs = require("node:fs");
+
+   // Readable Stream (reads data from source)
+   const readable = fs.createReadStream("video.mp4", {
+     highWaterMark: 64 * 1024
+   });
+
+   // Writable Stream (writes data to destination)
+   const writable = fs.createWriteStream("copy.mp4");
+
+   // Transfer data from readable to writable
+   readable.pipe(writable);
+   ```
+
+   `highWaterMark` controls the stream's buffering threshold; it is not an absolute memory limit. When the buffered amount reaches approximately 64 KiB, Node.js stops requesting more data.
+
+   ### Mental model
+   - Buffer = container holding bytes
+   - Chunk = unit of data delivered by a stream
+   - Stream = mechanism that delivers those chunks over time
+
+   Therefore, for a typical Node.js file stream:
+
+   - File → Readable Stream → Buffer chunks → Writable Stream → Destination
+
+   Streams don't exclusively transfer buffers. Depending on their configuration, Node.js streams can also process strings, typed arrays, or JavaScript objects (in object mode).
+
+10. Backpressure
+
+    Backpressure is a flow-control mechanism. It becomes necessary when the producer generates data faster than the consumer can process it. With backpressure, when downstream buffering reaches its threshold, Node.js signals the producer to slow down. Once the destination can accept more data, production resumes.
+
+    ```js
+    const fs = require("node:fs");
+    const { once } = require("node:events");
+
+    async function copyFile() {
+      const reader = fs.createReadStream("video.mp4");
+      const writer = fs.createWriteStream("copy.mp4");
+
+      try {
+        for await (const chunk of reader) {
+          const canContinue = writer.write(chunk);
+
+          if (!canContinue) {
+            console.log("Backpressure detected");
+            await once(writer, "drain");
+          }
+        }
+
+        writer.end();
+      } catch (err) {
+        reader.destroy();
+        writer.destroy();
+        throw err;
+      }
+    }
+    ```
+
+    In production, use `pipeline()` instead of manual backpressure handling.
+
+    ```js
+    import fs from "node:fs";
+    import { pipeline } from "node:stream";
+    import zlib from "node:zlib";
+
+    // Use the pipeline API to easily pipe a series of streams
+    // together and get notified when the pipeline is fully done.
+    // A pipeline to gzip a potentially huge video file efficiently:
+    pipeline(
+      fs.createReadStream("The.Matrix.1080p.mkv"),
+      zlib.createGzip(),
+      fs.createWriteStream("The.Matrix.1080p.mkv.gz"),
+      err => {
+        if (err) {
+          console.error("Pipeline failed", err);
+        } else {
+          console.log("Pipeline succeeded");
+        }
+      }
+    );
+    ```
